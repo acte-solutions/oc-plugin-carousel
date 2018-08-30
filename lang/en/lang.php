@@ -6,4 +6,5 @@
     'active' => 'Active',
     'title' => 'Title',
     'lead' => 'Subtitle',
+    'link' => 'Link',
 ];

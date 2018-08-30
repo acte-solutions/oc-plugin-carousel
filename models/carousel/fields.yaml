@@ -1,26 +1,31 @@
 fields:
-  is_active:
-    label: 'acte.carousel::lang.active'
-    span: auto
-    type: switch
-  img:
-    label: Image
-    mode: image
-    useCaption: true
-    thumbOptions:
-      mode: crop
-      extension: auto
-    span: full
-    type: fileupload
-  title:
-    label: 'acte.carousel::lang.title'
-    span: full
-    type: text
-  lead:
-    label: 'acte.carousel::lang.lead'
-    span: full
-    type: text
-  text:
-    label: Text
-    span: full
-    type: text
+    is_active:
+        label: 'acte.carousel::lang.active'
+        span: auto
+        type: switch
+    img:
+        label: Image
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: full
+        type: fileupload
+    title:
+        label: 'acte.carousel::lang.title'
+        span: full
+        type: text
+    lead:
+        label: 'acte.carousel::lang.lead'
+        span: full
+        type: text
+    text:
+        label: Text
+        span: full
+        type: text
+    link:
+        label: 'acte.carousel::lang.link'
+        span: full
+        placeholder: 'http://mycompany.com/article'
+        type: text

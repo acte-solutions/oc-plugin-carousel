@@ -22,7 +22,7 @@
 
     {% for record in records %}
     .carousel-item:nth-child({{ loop.index }}) {
-      background-image: url("{{ record.img.path }}");
+      background-image: url("{{ record.img.thumb(__SELF__.property('imageCropWidth'), __SELF__.property('imageCropHeight'), __SELF__.property('imageCropMode')) }}");
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center center;
@@ -50,12 +50,14 @@
     {% for record in records %}
     <div class="carousel-item {% if loop.first %}active{% endif %}">
       <div class="view">
-        <div class="full-bg-img flex-center white-text">
-        <div class="mask rgba-black-slight"></div>
+        <div class="full-bg-img flex-center">
+        {% if __SELF__.property('maskActivate') %}<div class="mask rgba-{{ __SELF__.property('maskColor')}}-{{ __SELF__.property('maskIntensity')}}"></div>{% endif %}
           <ul class="col-md-12 list-unstyled list-inline">
             <li>
               <h1 class="font-weight-bold text-uppercase">{{ record.title }}</h1>
               <p class="lead">{{ record.lead }}</p>
+              <p>{{ record.text }}</p>
+              <a class="btn btn-primary" href="{{ record.link }}">Read more</a>
             </li>
           </ul>
         </div>
