@@ -6,3 +6,6 @@
 1.0.3:
     - 'Updated table acte_carousel_carousel add link'
     - builder_table_update_acte_carousel_carousel.php
+1.0.4:
+    - 'Updated table acte_carousel_carousel add link_name'
+    - builder_table_update_acte_carousel_carousel_2.php

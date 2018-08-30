@@ -7,4 +7,5 @@
     'title' => 'Title',
     'lead' => 'Subtitle',
     'link' => 'Link',
+    'link_name' => 'Link name',
 ];

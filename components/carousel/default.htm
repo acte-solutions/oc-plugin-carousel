@@ -57,7 +57,9 @@
               <h1 class="font-weight-bold text-uppercase">{{ record.title }}</h1>
               <p class="lead">{{ record.lead }}</p>
               <p>{{ record.text }}</p>
-              <a class="btn btn-primary" href="{{ record.link }}">Read more</a>
+              {% if link_name %}
+              <a class="btn btn-primary" href="{{ record.link }}">{{ record.link_name }}</a>
+              {% endif %}
             </li>
           </ul>
         </div>

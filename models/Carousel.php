@@ -16,7 +16,9 @@ class Carousel extends Model
     'title' => 'max:64',
     'lead' => 'max:64',
     'paragraph' => 'max:64',
-    'img' => 'required'
+    'img' => 'required',
+    'link' => 'max:255',
+    'link_name' => 'max:64',
   ];
 
   /** Relations **/

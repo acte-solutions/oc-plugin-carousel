@@ -26,6 +26,10 @@ fields:
         type: text
     link:
         label: 'acte.carousel::lang.link'
-        span: full
+        span: left
         placeholder: 'http://mycompany.com/article'
+        type: text
+    link_name:
+        label: 'acte.carousel::lang.link_name'
+        span: right
         type: text
