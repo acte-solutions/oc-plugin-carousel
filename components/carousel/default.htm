@@ -1,6 +1,22 @@
 {% set records=__SELF__.records %}
 
 
+{% if __SELF__.property('textWhite') %}
+  {% set textWhite = "text-white" %}
+{% else %}
+  {% set textWhite = "" %}
+{% endif %}
+
+
+{% set maskActivate = __SELF__.property('maskActivate') %}
+{% set maskColor = __SELF__.property('maskColor') %}
+{% set maskIntensity = __SELF__.property('maskIntensity') %}
+
+{% set imageThumbWidth = __SELF__.property('imageThumbWidth') %}
+{% set imageThumbHeight = __SELF__.property('imageThumbHeight') %}
+{% set imageThumbMode = __SELF__.property('imageThumbMode') %}
+
+
 {% put styles %}
 <style>
     /* Necessary for full page carousel*/
@@ -22,7 +38,7 @@
 
     {% for record in records %}
     .carousel-item:nth-child({{ loop.index }}) {
-      background-image: url("{{ record.img.thumb(__SELF__.property('imageCropWidth'), __SELF__.property('imageCropHeight'), __SELF__.property('imageCropMode')) }}");
+      background-image: url("{{ record.img.thumb(imageThumbWidth, imageThumbHeight, { 'mode': imageThumbMode, 'quality': imageThumbQuality } ) }}");
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center center;
@@ -51,13 +67,13 @@
     <div class="carousel-item {% if loop.first %}active{% endif %}">
       <div class="view">
         <div class="full-bg-img flex-center">
-        {% if __SELF__.property('maskActivate') %}<div class="mask rgba-{{ __SELF__.property('maskColor')}}-{{ __SELF__.property('maskIntensity')}}"></div>{% endif %}
+        {% if maskActivate %}<div class="mask rgba-{{ maskColor }}-{{ maskIntensity }}"></div>{% endif %}
           <ul class="col-md-12 list-unstyled list-inline">
             <li>
-              <h1 class="font-weight-bold text-uppercase">{{ record.title }}</h1>
-              <p class="lead">{{ record.lead }}</p>
-              <p>{{ record.text }}</p>
-              {% if link_name %}
+              <h1 class="font-weight-bold text-uppercase {{ textWhite }}">{{ record.title }}</h1>
+              <p class="lead {{ textWhite }}">{{ record.lead }}</p>
+              <p class="{{ textWhite }}">{{ record.text }}</p>
+              {% if record.link_name %}
               <a class="btn btn-primary" href="{{ record.link }}">{{ record.link_name }}</a>
               {% endif %}
             </li>

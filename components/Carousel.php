@@ -18,31 +18,58 @@ class Carousel extends ComponentBase
   public function defineProperties()
   {
     return [
-      'imageCropMode' => [
-        'title' => 'Crop mode',
+      'textWhite' => [
+        'title' => 'Text white',
+        'description' => '.white-text class',
+        'type' => 'checkbox',
+        'default' => 'false',
+      ],
+      'imageThumbMode' => [
+        'title' => 'Thumb mode',
         'description' => '',
         'type' => 'dropdown',
         'default' => 'crop',
         'options'     => ['auto'=>'Auto', 'crop'=>'Crop'],
-        'group' => 'Image Crop',
+        'group' => 'Image Thumb',
       ],
-      'imageCropWidth' => [
-        'title' => 'Crop width',
+      'imageThumbQuality' => [
+        'title' => 'Thumb quality',
+        'description' => 'Jpeg compression 0-100',
+        'type' => 'dropdown',
+        'default' => 80,
+        'options' => [
+          '10' => '10',
+          '20' => '20',
+          '30' => '30',
+          '40' => '40',
+          '50' => '50',
+          '60' => '60',
+          '70' => '70',
+          '80' => '80',
+          '85' => '85',
+          '90' => '90',
+          '95' => '95',
+          '100' => '100',
+        ],
+        'group' => 'Image Thumb',
+      ],
+      'imageThumbWidth' => [
+        'title' => 'Thumb width',
         'description' => '',
         'type' => 'string',
         'default' => 640,
         'validationPattern' => '^[0-9]+$',
         'validationMessage' => 'Must be a number.',
-        'group' => 'Image Crop'
+        'group' => 'Image Thumb'
       ],
-      'imageCropHeight' => [
-        'title' => 'Crop height',
+      'imageThumbHeight' => [
+        'title' => 'Thumb height',
         'description' => '',
         'type' => 'string',
         'default' => 400,
         'validationPattern' => '^[0-9]+$',
         'validationMessage' => 'Must be a number.',
-        'group' => 'Image Crop'
+        'group' => 'Image Thumb'
       ],
       'maskActivate' => [
         'title' => 'Activate mask',
@@ -88,6 +115,25 @@ class Carousel extends ComponentBase
         ],
         'group' => 'Mask',
       ],
+      // 'maskPattern' => [
+      //   'title' => 'Mask pattern',
+      //   'description' => 'Choose mask pattern',
+      //   'type' => 'dropdown',
+      //   'default' => '',
+      //   'options' => [
+      //     '' => 'no pattern',
+      //     'pattern-1' => '1',
+      //     'pattern-2' => '2',
+      //     'pattern-3' => '3',
+      //     'pattern-4' => '4',
+      //     'pattern-5' => '5',
+      //     'pattern-6' => '6',
+      //     'pattern-7' => '7',
+      //     'pattern-8' => '8',
+      //     'pattern-9' => '9',
+      //   ],
+      //   'group' => 'Mask',
+      // ],
     ];
   }
 
