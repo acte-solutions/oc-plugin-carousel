@@ -16,12 +16,12 @@ class Carousel extends Model
   public $translatable = ['title', 'lead', 'text', 'link_name'];
 
   public $rules = [
-    'title' => 'max:64',
-    'lead' => 'max:64',
-    'text' => 'max:64',
+    'title' => 'nullable|string|max:64',
+    'lead' => 'nullable|string|max:64',
+    'text' => 'nullable|string|max:64',
     'img' => 'required',
-    'link' => 'max:255',
-    'link_name' => 'max:64',
+    'link' => 'nullable|string|max:255',
+    'link_name' => 'nullable|string|max:64',
   ];
 
   /** Relations **/

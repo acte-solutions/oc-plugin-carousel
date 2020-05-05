@@ -9,3 +9,5 @@
 1.0.4:
     - 'Updated table acte_carousel_carousel add link_name'
     - builder_table_update_acte_carousel_carousel_2.php
+1.0.5:
+    - 'Added French language'

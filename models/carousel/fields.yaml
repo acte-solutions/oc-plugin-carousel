@@ -1,6 +1,6 @@
 fields:
     is_active:
-        label: 'acte.carousel::lang.active'
+        label: 'acte.carousel::lang.is_active'
         span: auto
         type: switch
     img:
